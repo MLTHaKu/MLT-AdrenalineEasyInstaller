@@ -51,8 +51,9 @@ int debug = 0;	//toggle debug mode here
 
 int ADR_PRX_INSTL = 0;
 int ADR_INSTALLED = 0;
-char ADR_FOLDER[128] = "ux0:adrenaline";
-char TAI_CONFIG[128] = "ux0:tai/config.txt";
+char ADR_FOLDER[128] = "ur0:adrenaline";
+char ADR_FOLDER2[128] = "ux0:adrenaline";
+char TAI_CONFIG[128] = "ur0:tai/config.txt";
 char ADR_VERSION[128] = "unknown";
 
 

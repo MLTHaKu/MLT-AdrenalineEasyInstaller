@@ -393,7 +393,7 @@ int write_adrenaline_to_config(char *taiconfig, char *path, char *id) {
 				
 				if ( buffer[strlen(buffer)-1] != '\n' ) fprintf(temp, "\n"); //whitespaces fix
 			
-			if( (strstr(buffer, "*KERNEL")) != NULL ) {
+			if( (strstr(buffer, "ur0:tai/gamesd.skprx")) != NULL ) {
 				sprintf(pathbuff, "%s/adrenaline.skprx\n", path );	
 				fprintf(temp, pathbuff);
 			}

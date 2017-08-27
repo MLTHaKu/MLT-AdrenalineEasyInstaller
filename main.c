@@ -110,7 +110,7 @@ Menu recovery_menu[] = {
 	{"2. LiveArea theming ➡", 				MENU_BLOCKED, 		theme_options,				"",			"",			"* Access theming options menu"										},
 	{"3. Advanced options ➡", 				MENU_ACTIVE, 		more_options,				"",			"",			"* Access advanced options menu" 										},
 	{"4. View Adrenaline Update-History", 	MENU_ACTIVE, 		option_show_changelogfile,	"",			"",			"* View the Adrenaline update-History (aka Changelog)"				},
-	{"5. Exit",								MENU_EXIT, 			NULL,						"",			"",			"* Exit EasyInstaller" 												},
+	{"5. Exit",								MENU_EXIT, 			NULL,						"",			"",			"* Exit MLT EasyInstaller" 												},
 	{NULL,0,"","",""}
 };
 
@@ -173,7 +173,7 @@ int system_check() {
 	
 	psvDebugScreenInit();
 	
-	printf("EasyInstaller v%s\n", VERSION);
+	printf("MLT EasyInstaller v%s\n", VERSION);
 	printf("-------------------\n\n\n");
 	
 	// Some system checks first ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -1586,8 +1586,8 @@ void install_adrenaline_files(char *id, char *arg) {
 	
 	
 	/// Checking dir
-	printf("Checking folder %s/.. ", ADR_FOLDER);
-	ret = doesDirExist(ADR_FOLDER);
+	printf("Checking folder %s/.. ", ADR_FOLDER2);
+	ret = doesDirExist(ADR_FOLDER2);
 	if ( ret == 1 )	print_color("Found!\n\n", GREEN);	
 	else {	
 		print_color("Not found!\n\n", YELLOW);	
@@ -1595,6 +1595,8 @@ void install_adrenaline_files(char *id, char *arg) {
 		/// make dir
 		printf("Creating folder %s/.. ", ADR_FOLDER);
 		ret = sceIoMkdir(ADR_FOLDER, 0777);
+		printf("Creating folder %s/.. ", ADR_FOLDER2);
+		ret = sceIoMkdir(ADR_FOLDER2, 0777);
 		if ( ret == 0 )	print_color("OK\n\n", GREEN);	
 		else print_color("ERROR\n\n", RED);	
 	}
@@ -1646,7 +1648,7 @@ void install_adrenaline_files(char *id, char *arg) {
 	else print_color("ERROR!\n\n", RED);
 	
 	/// 661.PBP
-	sprintf(buffer, "%s/661.PBP", ADR_FOLDER);
+	sprintf(buffer, "%s/661.PBP", ADR_FOLDER2);
 	printf("Checking for %s.. ", buffer);
 	ret = doesFileExist(buffer);
 	if (ret == 1) print_color("OK\n\n", GREEN);
@@ -1755,6 +1757,7 @@ void change_adrenaline_files(char *id, char *arg, char *arg2, int mode) {
 		/// Removing old adrenaline folder
 		printf("Removing %s.. ", ADR_FOLDER);
 		ret = removePath(ADR_FOLDER);
+		removePath(ADR_FOLDER2);
 		if ( ret == 1 )	print_color("OK\n", GREEN);
 		else print_color("ERROR\n", RED);
 		
@@ -2008,6 +2011,7 @@ void uninstall_adrenaline_files(char *id) {
 		/// Delete EVERYTHING (delete whole adrenaline folder) 
 		printf("Deleting %s.. ", ADR_FOLDER);
 		ret = removePath(ADR_FOLDER);
+		removePath(ADR_FOLDER2);
 		if ( ret ) print_color("OK\n\n", GREEN);
 		else print_color("ERROR\n\n", RED);
 		
