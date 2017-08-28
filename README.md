@@ -21,9 +21,8 @@ Un instalador sencillo de eCFW Adrenaline 6.61 por TheFloW
 *¡Puedes instalar e intercambiar todas las versiones desde 1.0 hasta 5.1 que estén en formato plugin!*
 
 
-**Agradecimientos a:** TheFloW, Xerpi, Yoti, Chihiro, SMOKE & of course Team Molecule! :)
+**Agradecimientos a:** ¡TheFloW, Xerpi, Yoti, Chihiro, SMOKE y por supuesto al Team Molecule! :)
 
-*This version install adrenaline on sd2vita wihout any problems or aditional steps and add uma0 support by MiraLaTijera*
 
 *Esta versión instala Adrenaline en sd2vita sin ningún problema o pasos adicionales y añade el soporte de uma0 por MiraLaTijera*
 
